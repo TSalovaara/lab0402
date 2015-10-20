@@ -1,0 +1,259 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red242\green242\blue242;}
+\margl1440\margr1440\vieww15600\viewh21560\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs36 \cf0 Lab - Odds and Ends\
+==========\
+Follow the instructions line-by-line.  \
+\
+* Type in the commands as is, but ignore the beginning prompt.  \
+* Enter, tab, up and down are represented by <ENTER><TAB>,<UP> and <DOWN>.  \
+* "No output" or "nothing happens" are valid answers to any of the questions.\
+==========\
+\
+==========\
+1. Open a new terminal window.\
+[NO OUTPUT]\
+----------\
+==========\
+2. In your home directory, start editing a text file called temp.txt using nano.\
+\
+Write the command you used to do this below.\
+----------\
+\
+nano temp.txt\
+\
+==========\
+3. Open another terminal\
+\
+[NO OUTPUT]\
+----------\
+==========\
+3. In this terminal, show (list) all running processes / programs.\
+\
+Write the command that you used to do this, and the last two lines of output.\
+----------\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\fs20 \cf2 \cb0 \CocoaLigature0 student          4881   0.0  0.0  2448728   1372 s001  S     7:39PM   0:00.01 -bash\
+student          4880   0.0  0.1  2562328   6496   ??  SN    7:39PM   0:00.05 /System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Versions/A/Sup\
+\pard\pardeftab720
+
+\f0\fs36 \cf0 \cb1 \CocoaLigature1 \
+\
+==========\
+4. Run the same command, but look for a specific process.  (It's the version of the command that has | grep ...).  Look for the program that you started to edit a file, nano.\
+\
+Write the command that you used to do this, and all of the output.\
+----------\
+ps aux | grep -i temp.txt\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\fs20 \cf2 \cb0 \CocoaLigature0 ent-v314-017:~ student$ ps aux | grep -i temp.txt\
+student          4896   0.8  0.0  2432784    680 s001  S+    7:41PM   0:00.00 grep -i temp.txt\
+student          4874   0.0  0.0  2433028   1052 s000  S+    7:38PM   0:00.01 nano temp.txt
+\f0\fs36 \cf0 \cb1 \CocoaLigature1 \
+\pard\pardeftab720
+\cf0 \
+==========\
+5. Stop (kill) the process that's called nano "temp.txt" by using the process id shown in the output of your previous command (first number after user name).\
+\
+----------\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1 \cf2 \cb0 \CocoaLigature0 ent-v314-017:lab0402 student$ cd ~\
+ent-v314-017:~ student$ pwd\
+/Users/student\
+ent-v314-017:~ student$ nano temp.txt\
+Received SIGHUP or SIGTERM\
+ent-v314-017:~ student$ \
+\
+\
+\
+\
+\pard\pardeftab720
+
+\f0 \cf0 \cb1 \CocoaLigature1 \
+==========\
+6. Go to your other terminal window.  What happened to nano?  What was the message on the screen?\
+\
+----------\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1 \cf2 \cb0 \CocoaLigature0 ent-v314-017:~ student$ nano temp.txt\
+Received SIGHUP or SIGTERM
+\f0 \cf0 \cb1 \CocoaLigature1 \
+\pard\pardeftab720
+\cf0 ==========\
+7. Close the terminal window that nano was in, and go back to the terminal where you ran ps.\
+\
+[NO OUTPUT]\
+----------\
+\
+\
+==========\
+8. Now... using nano, create a shell script in your home directory called hello.sh.  It should contain the following text exactly:\
+\
+#!/bin/bash\
+echo "hi there!"\
+\
+Quit and save when you're done.\
+\
+What command did you use to do this?\
+----------\
+nano hello.sh \
+\
+\pard\pardeftab720
+\cf0 #!/bin/bash\
+echo "hi there!"\
+\pard\pardeftab720
+\cf0 \
+cntrlX, Y, Ent\
+\
+==========\
+9. Change the permissions (modify) on hello.sh so that the *user* (u) can *execute* (x) it: \
+\
+Write the commands that you used to do this below.\
+----------\
+\
+chmod u+x hello.sh\
+\
+==========\
+10. Run your script (hello.sh).\
+\
+How did you do this?  What was the output?\
+----------\
+\
+./hello.sh\
+hi there!\
+\
+==========\
+11. Change to the root directory.  Try running your script again (hello.sh).  What was the output (if there's an error, write it out)?\
+----------\
+output: hi there!\
+\
+==========\
+12. Now trying using the full, absolute path to your script (that is, starting with /...).  What did you write in?  What did it do?\
+----------\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\fs20 \cf2 \cb0 \CocoaLigature0 ent-v314-017:~ student$ /Users/student/hello.sh\
+hi there!
+\f0\fs36 \cf0 \cb1 \CocoaLigature1 \
+\pard\pardeftab720
+\cf0 ==========\
+13.  Go back to the directory that your hello.sh script was in.  What command did you use to change to this directory? \
+----------\
+cd ~\
+\
+==========\
+14. Type in the following command:\
+\
+echo $PATH\
+\
+Write down the output of this command\
+----------\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\fs20 \cf2 \cb0 \CocoaLigature0 /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin
+\f0\fs36 \cf0 \cb1 \CocoaLigature1 \
+\pard\pardeftab720
+\cf0 \
+==========\
+15. Type in the following command to show all environment variables:\
+\
+env\
+\
+Write down the last two lines of output for this command\
+----------\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\fs20 \cf2 \cb0 \CocoaLigature0 TERM_PROGRAM=Apple_Terminal\
+SHELL=/bin/bash\
+TERM=xterm-256color\
+TMPDIR=/var/folders/r_/y176z7rn5jq914lbzxrx4btw0000gp/T/\
+Apple_PubSub_Socket_Render=/tmp/launch-AS0DbE/Render\
+TERM_PROGRAM_VERSION=326\
+TERM_SESSION_ID=DA3E8EC9-8CB7-4B79-B9B2-57F28CA0B208\
+USER=student\
+SSH_AUTH_SOCK=/tmp/launch-OT2WdF/Listeners\
+__CF_USER_TEXT_ENCODING=0x1F6:0:0\
+PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin\
+__CHECKFIX1436934=1\
+PWD=/Users/student\
+LANG=en_US.UTF-8\
+SHLVL=1\
+HOME=/Users/student\
+LOGNAME=student\
+DISPLAY=/tmp/launch-u28ytf/org.macosforge.xquartz:0\
+_=/usr/bin/env\
+OLDPWD=/Users/student
+\f0\fs36 \cf0 \cb1 \CocoaLigature1 \
+\pard\pardeftab720
+\cf0 ==========\
+\
+16. Set your PATH to include your home directory.  Do the following (substituting student or username for professor)\
+\
+PATH=$PATH:/Users/professor\
+\
+Now check your path again.\
+\
+echo $PATH\
+\
+Write down the output of the last command.  It should include your home folder.\
+----------\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\fs20 \cf2 \cb0 \CocoaLigature0 ent-v314-017:~ student$ PATH=$PATH:/Users/student\
+ent-v314-017:~ student$ echo $PATH\
+/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/Users/student
+\f0\fs36 \cf0 \cb1 \CocoaLigature1 \
+\pard\pardeftab720
+\cf0 ==========\
+17.  Go back to root (/)\
+\
+Try running your script simply by typing\
+\
+hello.sh\
+\
+It should work now!  What is the output?\
+----------\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\fs20 \cf2 \cb0 \CocoaLigature0 hi there!
+\f0\fs36 \cf0 \cb1 \CocoaLigature1 \
+\pard\pardeftab720
+\cf0 \
+==========\
+18.  Save this file in the repository that you created from parts 1 and 2.\
+\
+Add and commit it to your local repository and push to the remote repository.  Check github to see that your work was submitted.\
+----------\
+\
+==========\
+19.  Optional - Try writing this shell script!\
+\
+In your repository, create an executable shell script called make_5_files that creates 10 files in the directory that it's called in.  The file names should be:\
+myfile1.txt\
+myfile2.txt\
+.\
+myfile10.txt\
+\
+Use a for loop to do this.  Add and save in your repository, push to the remote.\
+----------\
+\
+\
+==========\
+20.  Optional - Try writing this shell script!\
+\
+In your repository, create an executable shell script called say_twice.  It should take one argument - a filename.  It will cat out the contents of that file twice, with a row of dashes between each (use cat, echo... then cat again).  Create a test file calle foo.txt ... that contains foo, bar and baz... each on separate lines.\
+\
+Add and save in your repository, push to the remote.\
+\
+----------\
+}
